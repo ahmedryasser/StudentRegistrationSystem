@@ -53,14 +53,17 @@ public class RegisterStudentHandler extends CommandEventHandler {
 
         // Check if the given course conflicts with any of the courses the student has registered.
         ArrayList vCourse = objStudent.getRegisteredCourses();
-        for (int i=0; i<vCourse.size(); i++) {
-            if (((Course) vCourse.get(i)).conflicts(objCourse)) {
-                return "Registration conflicts";
-            }
+//        for (int i=0; i<vCourse.size(); i++) {
+//            if (((Course) vCourse.get(i)).conflicts(objCourse)) {
+//                return "Registration conflicts";
+//            }
+//        }
+        ConflictHandler conflictHandler = new ConflictHandler(objStudent, objCourse);
+        String conflictResult = conflictHandler.checkConflict();
+        if (conflictResult != null) {
+            return conflictResult; //Return "Registration conflicts" if any conflict exists
         }
-
         Boolean overbooked = objCourse.vRegistered.size()>2?true:false;
-        System.out.println("Class overbooked");
 
         // Request validated. Proceed to register.
         this.objDataBase.makeARegistration(sSID, sCID, sSection);

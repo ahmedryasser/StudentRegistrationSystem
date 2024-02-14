@@ -1,0 +1,7 @@
+Student G00123456 has been registered to class CS112 section a
+
+Student G00123456 has been registered to class CS475 section a
+
+Student registered for CS475
+G00123456 Carson Kit CS 1 CS112 CS211 CS332 CS421
+
