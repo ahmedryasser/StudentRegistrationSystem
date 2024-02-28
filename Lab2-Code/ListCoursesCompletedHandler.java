@@ -8,38 +8,39 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
  * "List courses a student has completed" command event handler.
  */
-public class ListCoursesCompletedHandler extends CommandEventHandler {
-
+public class ListCoursesCompletedHandler  extends UnicastRemoteObject implements IActivity {
+    private DataBase db;
     /**
      * Construct "List courses a student has completed" command event handler.
      *
-     * @param objDataBase reference to the database object
-     * @param iCommandEvCode command event code to receive the commands to process
-     * @param iOutputEvCode output event code to send the command processing result
-     */
-    public ListCoursesCompletedHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
-        super(objDataBase, iCommandEvCode, iOutputEvCode);
-    }
 
+     */
+    public ListCoursesCompletedHandler(DataBase db) throws RemoteException {
+        super();
+        this.db = db;
+    }
     /**
-     * Process "List courses a student has completed" command event.
+     * Process "List Courses Completed" event.
      *
-     * @param param a string parameter for command
+     * @param param a string
      * @return a string result of command processing
      */
-    protected String execute(String param) {
+    @Override
+    public String execute(String param) throws RemoteException {
         // Parse the parameters.
         StringTokenizer objTokenizer = new StringTokenizer(param);
         String sSID = objTokenizer.nextToken();
 
         // Get the list of courses the given student has completed.
-        Student objStudent = this.objDataBase.getStudentRecord(sSID);
+        Student objStudent = db.getStudentRecord(sSID);
         if (objStudent == null) {
             return "Invalid student ID";
         }
@@ -49,7 +50,7 @@ public class ListCoursesCompletedHandler extends CommandEventHandler {
         String sReturn = "";
         for (int i=0; i<vCourseID.size(); i++) {
             String sCID = (String) vCourseID.get(i);
-            String sName = this.objDataBase.getCourseName(sCID);
+            String sName = db.getCourseName(sCID);
             sReturn += (i == 0 ? "" : "\n") + sCID + " " + (sName == null ? "Unknown" : sName);
         }
         try {

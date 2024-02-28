@@ -8,6 +8,8 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -15,26 +17,25 @@ import java.util.StringTokenizer;
 /**
  * "Register a student for a course" command event handler.
  */
-public class RegisterStudentHandler extends CommandEventHandler {
+public class RegisterStudentHandler  extends UnicastRemoteObject implements IActivity {
 
     /**
-     * Construct "Register a student for a course" command event handler.
+     * Construct "Register a student for a course"  handler.
      *
-     * @param objDataBase reference to the database object
-     * @param iCommandEvCode command event code to receive the commands to process
-     * @param iOutputEvCode output event code to send the command processing result
      */
-    public RegisterStudentHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
-        super(objDataBase, iCommandEvCode, iOutputEvCode);
+    private DataBase db;
+    public RegisterStudentHandler(DataBase db) throws RemoteException {
+        super();
+        this.db = db;
     }
-
     /**
-     * Process "Register a student for a course" command event.
+     * Process "Register a student for a course" event.
      *
-     * @param param a string parameter for command
+     * @param param a string
      * @return a string result of command processing
      */
-    protected String execute(String param) {
+    @Override
+    public String execute(String param) throws RemoteException {
         // Parse the parameters.
         StringTokenizer objTokenizer = new StringTokenizer(param);
         String sSID     = objTokenizer.nextToken();
@@ -42,8 +43,8 @@ public class RegisterStudentHandler extends CommandEventHandler {
         String sSection = objTokenizer.nextToken();
 
         // Get the student and course records.
-        Student objStudent = this.objDataBase.getStudentRecord(sSID);
-        Course objCourse = this.objDataBase.getCourseRecord(sCID, sSection);
+        Student objStudent = db.getStudentRecord(sSID);
+        Course objCourse = db.getCourseRecord(sCID, sSection);
         if (objStudent == null) {
             return "Invalid student ID";
         }
@@ -66,7 +67,7 @@ public class RegisterStudentHandler extends CommandEventHandler {
         Boolean overbooked = objCourse.vRegistered.size()>2?true:false;
 
         // Request validated. Proceed to register.
-        this.objDataBase.makeARegistration(sSID, sCID, sSection);
+        db.makeARegistration(sSID, sCID, sSection);
         try {
             FileWriter myWriter = new FileWriter("Lab2-Code/output.txt", true);
             myWriter.write("Student "+sSID+" has been registered to class " + sCID+ " section " + sSection + System.lineSeparator() + System.lineSeparator());

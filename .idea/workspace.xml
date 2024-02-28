@@ -5,11 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="233b358d-97cf-44aa-a0aa-02cb5c47ba84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab2-Code/IActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab2-Code/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab2-Code/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ClientInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ClientInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ClientOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ClientOutput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/CommandEventHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/CommandEventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/DataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/EventBus$Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/EventBus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/EventBus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListAllCoursesHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListAllCoursesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/ListAllCoursesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListAllStudentsHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListAllStudentsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/ListAllStudentsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListCoursesCompletedHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListCoursesCompletedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/ListCoursesCompletedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListCoursesRegisteredHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListCoursesRegisteredHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/ListCoursesRegisteredHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListStudentsRegisteredHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/ListStudentsRegisteredHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/ListStudentsRegisteredHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/RegisterStudentHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2-Code/RegisterStudentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/RegisterStudentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/SystemMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2-Code/SystemMain.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2-Code/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2-Code/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ClientInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ClientOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/CommandEventHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/EventBus$Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/EventBus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListAllCoursesHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListAllCoursesHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListAllStudentsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListAllStudentsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListCoursesCompletedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListCoursesCompletedHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListCoursesRegisteredHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListCoursesRegisteredHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListStudentsRegisteredHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/ListStudentsRegisteredHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/RegisterStudentHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/RegisterStudentHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/SystemMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentRegistrationSystem/output.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +61,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2cNHPubb4pzwBcfKafSbRz9olHV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,6 +71,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Client.executor": "Debug",
+    "Application.Server.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -46,6 +87,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemMain" />
@@ -76,5 +122,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Lab2-Code/ListStudentsRegisteredHandler.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

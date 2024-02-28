@@ -8,6 +8,8 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -15,33 +17,32 @@ import java.util.StringTokenizer;
 /**
  * "List students who registered for a course" command event handler.
  */
-public class ListStudentsRegisteredHandler extends CommandEventHandler {
+public class ListStudentsRegisteredHandler  extends UnicastRemoteObject implements IActivity {
 
     /**
      * Construct "List students who registered for a course" command event handler.
      *
-     * @param objDataBase reference to the database object
-     * @param iCommandEvCode command event code to receive the commands to process
-     * @param iOutputEvCode output event code to send the command processing result
      */
-    public ListStudentsRegisteredHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
-        super(objDataBase, iCommandEvCode, iOutputEvCode);
+    private DataBase db;
+    public ListStudentsRegisteredHandler(DataBase db) throws RemoteException {
+        super();
+        this.db = db;
     }
-
     /**
-     * Process "List students who registered for a course" command event.
+     * Process "List Courses Completed" event.
      *
-     * @param param a string parameter for command
+     * @param param a string
      * @return a string result of command processing
      */
-    protected String execute(String param) {
+    @Override
+    public String execute(String param) throws RemoteException {
         // Parse the parameters.
         StringTokenizer objTokenizer = new StringTokenizer(param);
         String sCID     = objTokenizer.nextToken();
         String sSection = objTokenizer.nextToken();
 
         // Get the list of students who registered for the given course.
-        Course objCourse = this.objDataBase.getCourseRecord(sCID, sSection);
+        Course objCourse = db.getCourseRecord(sCID, sSection);
         if (objCourse == null) {
             return "Invalid course ID or course section";
         }

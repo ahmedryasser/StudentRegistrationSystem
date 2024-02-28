@@ -7,34 +7,35 @@
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 
 /**
  * "List all courses" command event handler.
  */
-public class ListAllCoursesHandler extends CommandEventHandler {
-
+public class ListAllCoursesHandler extends UnicastRemoteObject implements IActivity {
+    private DataBase db;
     /**
-     * Construct "List all courses" command event handler.
+     * Construct "List all students" command event handler.
      *
-     * @param objDataBase reference to the database object
-     * @param iCommandEvCode command event code to receive the commands to process
-     * @param iOutputEvCode output event code to send the command processing result
+     * * @param db a database
      */
-    public ListAllCoursesHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
-        super(objDataBase, iCommandEvCode, iOutputEvCode);
+    public ListAllCoursesHandler(DataBase db) throws RemoteException {
+        super();
+        this.db = db;
     }
-
     /**
-     * Process "List all courses" command event.
+     * Process "List all courses" event.
      *
-     * @param param a string parameter for command
+     * @param param a string
      * @return a string result of command processing
      */
-    protected String execute(String param) throws IOException {
+    @Override
+    public String execute(String param) throws RemoteException {
         // Get all course records.
-        ArrayList vCourse = this.objDataBase.getAllCourseRecords();
+        ArrayList vCourse = db.getAllCourseRecords();
 
         // Construct a list of course information and return it.
         String sReturn = "";
